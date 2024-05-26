@@ -18,73 +18,74 @@ public class Attacher : MonoBehaviour
 
     void Start()
     {
-        if(camera0 == null){
+        if (camera0 == null){
             Debug.Log("rocket: Untargeted cineMachine.");
         }
-        if(ruler0 == null){
+        if (ruler0 == null){
             Debug.Log("rocket: Untargeted indicator.");
-        }
-        else{
+        } else {
             ruler0.SetActive(false);
         }
+        
         rocketRb = GetComponent<Rigidbody>();
+        rocketRb.drag = 0.1f; // 공기 저항 추가
         previousPosition = transform.position;
-    
+
         Invoke("StoreVelocity", delay);
         Invoke("Launch", delay);
         Invoke("fp0", delay - 0.45f);
     }
 
-    void Update(){
+    void Update()
+    {
         Vector3 currentPosition = transform.position;
-        
         velocity = (currentPosition - previousPosition) / Time.deltaTime;
-
         previousPosition = currentPosition;
 
-        if (target != null)
-        {
+        if (target != null){
             transform.position = target.position;
             transform.rotation = target.rotation;
         }
         //Debug.Log("V: " + velocity.magnitude);
 
-        if(launch == 1){
-            ruler0.GetComponent<TextMeshProUGUI>().text = (transform.position.y).ToString() + "m";
+        if (launch == 1){
+            ruler0.GetComponent<TextMeshProUGUI>().text = (transform.position.y - initY).ToString() + "m";
         }
 
         if (Input.GetKeyDown(KeyCode.L)){
-            StoreVelocity();
+            //StoreVelocity();
+            fp0();
             Launch();
             launch = 1;
         }
     }
 
-    void StoreVelocity(){
-        // 현재 속도와 각속도를 저장합니다.
-        storedVelocity = velocity;
+    void StoreVelocity()
+    {
+        storedVelocity = velocity * 0.1f; // 속도를 현실적으로 조정
         Debug.Log("stored V: " + storedVelocity);
     }
 
     public void DetachFromParent()
     {
         target = null;
-        // 저장된 속도와 각속도를 로켓에 다시 적용합니다.
         rocketRb.velocity = storedVelocity;
         ruler0.SetActive(true);
     }
 
-    public void Launch(){
-        if(launch != 1){
-        launch = 1;
-        initY = transform.position.y;
-        DetachFromParent();
+    public void Launch()
+    {
+        if (launch != 1){
+            launch = 1;
+            initY = transform.position.y;
+            DetachFromParent();
         }
     }
 
-    void fp0(){
-        if(launch != 1){
-        camera0.GetComponent<cineMachine>().fixFp();
+    void fp0()
+    {
+        if (launch != 1){
+            camera0.GetComponent<cineMachine>().fixFp();
         }
     }
 }
