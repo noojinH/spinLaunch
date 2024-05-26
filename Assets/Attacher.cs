@@ -84,7 +84,7 @@ public class Attacher : MonoBehaviour
 
     void fp0(){
         if(launch != 1){
-        //camera0.GetComponent<cineMachine>().fixFp();
+        camera0.GetComponent<cineMachine>().fixFp();
         }
     }
 }

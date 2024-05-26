@@ -10,6 +10,8 @@ public class cineMachine : MonoBehaviour
     private bool toggle = false;
 
     void Start(){
+        fp1.SetActive(false);
+        tp0.SetActive(true);
         if (tp0 == null)
             {
                 Debug.LogError("tp0 is not assigned.");
