@@ -15,6 +15,8 @@ public class Attacher : MonoBehaviour
     [SerializeField]
     private GameObject ruler0;
     private float initY;
+    private float temp0;
+    private float prev0;
 
     void Start()
     {
@@ -49,7 +51,10 @@ public class Attacher : MonoBehaviour
         //Debug.Log("V: " + velocity.magnitude);
 
         if (launch == 1){
-            ruler0.GetComponent<TextMeshProUGUI>().text = (transform.position.y - initY).ToString() + "m";
+            if(transform.position.y - initY > temp0)
+            temp0 = (transform.position.y - initY);
+            ruler0.GetComponent<TextMeshProUGUI>().text = temp0.ToString() + "m";
+            prev0 = temp0;
         }
 
         if (Input.GetKeyDown(KeyCode.L)){
