@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Attacher : MonoBehaviour
@@ -17,6 +20,7 @@ public class Attacher : MonoBehaviour
     private float initY;
     private float temp0;
     private float prev0;
+    private bool isOnGround = false;
 
     void Start()
     {
@@ -65,6 +69,17 @@ public class Attacher : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        // 바닥 태그를 가진 오브젝트와 충돌했는지 확인
+        if (collision.gameObject.CompareTag("Respawn") && !isOnGround)
+        {
+            isOnGround = true;
+            StartCoroutine(SwitchSceneAfterDelay(5f));
+        }
+    }
+
+
     void StoreVelocity()
     {
         storedVelocity = velocity * 0.1f; // 속도를 현실적으로 조정
@@ -85,6 +100,12 @@ public class Attacher : MonoBehaviour
             initY = transform.position.y;
             DetachFromParent();
         }
+    }
+
+    IEnumerator SwitchSceneAfterDelay(float fi1)
+    {
+        yield return new WaitForSeconds(fi1);
+        SceneManager.LoadScene(1);
     }
 
     void fp0()

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpinLaunch.unity
     guid: 3500a2d60f581664bb6aabf61d66ba9d
+  - enabled: 1
+    path: Assets/Scenes/Scatter.unity
+    guid: 031c49653cfc4dc4dbee40ee5f1e44d3
   m_configObjects: {}
