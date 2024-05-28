@@ -26,27 +26,29 @@ public class Randomizer : MonoBehaviour
 
             if (targetScript0 != null)
             {
-                if(PlayerPrefs.GetInt("attempt") != null){
-                PlayerPrefs.SetInt("attempt", PlayerPrefs.GetInt("attempt") + 1);
+                if(PlayerPrefs.HasKey("attempt")){
+                    PlayerPrefs.SetInt("attempt", PlayerPrefs.GetInt("attempt") + 1);
                 }
                 else{
-                    PlayersPrefs.SetInt("attempt", 1);
-                }
+                    PlayerPrefs.SetInt("attempt", 1);
+                    }
+                Debug.Log("attempt: " + PlayerPrefs.GetInt("attempt").ToString());
                 targetScript0.maxRPM = Random.Range(300f, 3000f);
                 tmp0.text =  targetScript0.maxRPM.ToString() + "RPM";
-                PlayerPrefs.SetFloat("maxRPMvar", targetScript0.maxRPM);
+                PlayerPrefs.SetFloat("maxRPMvar" + PlayerPrefs.GetInt("attempt").ToString(), targetScript0.maxRPM);
 
                 targetScript0.maxRPMTime = Random.Range(3f, 6f);
                 tmp0.text +=  " in " + targetScript0.maxRPMTime.ToString() +"s";
-                PlayerPrefs.SetFloat("maxTimevar", targetScript0.maxRPMTime);
+                PlayerPrefs.SetFloat("maxTimevar" + PlayerPrefs.GetInt("attempt").ToString(), targetScript0.maxRPMTime);
 
                 rocket0.GetComponent<Rigidbody>().mass = Random.Range(0.5f, 1.5f);
                 tmp0.text += "\n" + rocket0.GetComponent<Rigidbody>().mass.ToString() + "kg";
-                PlayerPrefs.SetFloat("massVar", rocket0.GetComponent<Rigidbody>().mass);
+                PlayerPrefs.SetFloat("massVar" + PlayerPrefs.GetInt("attempt").ToString(), rocket0.GetComponent<Rigidbody>().mass);
 
                 rocket0.GetComponent<Attacher>().delay = Random.Range(1f, 7f);
                 tmp0.text += " \nlaunch: " + rocket0.GetComponent<Attacher>().delay.ToString()+"seconds";
-                PlayerPrefs.SetFloat("delayVar", rocket0.GetComponent<Attacher>().delay);
+                PlayerPrefs.SetFloat("delayVar" + PlayerPrefs.GetInt("attempt").ToString(), rocket0.GetComponent<Attacher>().delay);
+                Debug.Log("Saved all variables.");
 
 
                 //Debug.Log("Randomized value: " + targetScript.maxRPM);

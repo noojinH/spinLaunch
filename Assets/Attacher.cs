@@ -18,6 +18,7 @@ public class Attacher : MonoBehaviour
     [SerializeField]
     private GameObject ruler0;
     private float initY;
+    [SerializeField]
     private float temp0;
     private float prev0;
     private bool isOnGround = false;
@@ -75,6 +76,8 @@ public class Attacher : MonoBehaviour
         if (collision.gameObject.CompareTag("Respawn") && !isOnGround)
         {
             isOnGround = true;
+            PlayerPrefs.SetFloat("record" + PlayerPrefs.GetInt("attempt").ToString(), temp0);
+            Debug.Log("record: " + PlayerPrefs.GetFloat("record" + PlayerPrefs.GetInt("attempt"))+ "m");
             StartCoroutine(SwitchSceneAfterDelay(5f));
         }
     }
