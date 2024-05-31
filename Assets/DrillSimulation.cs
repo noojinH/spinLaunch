@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DrillSimulation : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DrillSimulation : MonoBehaviour
     private float currentRPM = 0f;
     private float elapsedTime = 0f;
     private float energyLossFactor = 0.98f; // 에너지 손실 비율
-    
+
     void Update()
     {
         if (elapsedTime < maxRPMTime)

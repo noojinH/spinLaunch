@@ -22,9 +22,12 @@ public class Attacher : MonoBehaviour
     private float temp0;
     private float prev0;
     private bool isOnGround = false;
+    private TextMeshProUGUI indicator;
+    private Vector3 currentPosition;
 
     void Start()
     {
+        indicator = ruler0.GetComponent<TextMeshProUGUI>();
         if (camera0 == null){
             Debug.Log("rocket: Untargeted cineMachine.");
         }
@@ -37,7 +40,6 @@ public class Attacher : MonoBehaviour
         rocketRb = GetComponent<Rigidbody>();
         rocketRb.drag = 0.1f; // 공기 저항 추가
         previousPosition = transform.position;
-
         Invoke("StoreVelocity", delay);
         Invoke("Launch", delay);
         Invoke("fp0", delay - 0.45f);
@@ -45,7 +47,7 @@ public class Attacher : MonoBehaviour
 
     void Update()
     {
-        Vector3 currentPosition = transform.position;
+        currentPosition = transform.position;
         velocity = (currentPosition - previousPosition) / Time.deltaTime;
         previousPosition = currentPosition;
 
@@ -58,7 +60,7 @@ public class Attacher : MonoBehaviour
         if (launch == 1){
             if(transform.position.y - initY > temp0)
             temp0 = (transform.position.y - initY);
-            ruler0.GetComponent<TextMeshProUGUI>().text = temp0.ToString() + "m";
+            indicator.text = temp0.ToString() + "m";
             prev0 = temp0;
         }
 
