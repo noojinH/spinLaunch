@@ -3,10 +3,10 @@ using System.Collections;
 
 public class DrillSimulation : MonoBehaviour
 {
-    public float linearVelocity = 1.0f;
+    public float linearVelocity = 0.25f;
     public float radius = 0.05f;
-    public float maxRPM = 3000f;
-    public float maxRPMTime = 2.0f;
+    public float maxRPM = 500f;
+    public float maxRPMTime = 7.5f;
     
     private float currentRPM = 0f;
     private float elapsedTime = 0f;
@@ -16,9 +16,8 @@ public class DrillSimulation : MonoBehaviour
     {
         if (elapsedTime < maxRPMTime)
         {
-            currentRPM = Mathf.Lerp(0f, maxRPM, elapsedTime / maxRPMTime);
+            currentRPM = (maxRPM / maxRPMTime) * elapsedTime; // 선형적으로 증가
             elapsedTime += Time.deltaTime;
-            //Debug.Log("RPM: " + currentRPM);
         }
         else
         {
