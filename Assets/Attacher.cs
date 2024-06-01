@@ -92,7 +92,11 @@ public class Attacher : MonoBehaviour
     public void DetachFromParent()
     {
         target = null;
+        PlayerPrefs.SetFloat("lauy" + PlayerPrefs.GetInt("attempt").ToString(), transform.position.y);
+        PlayerPrefs.SetFloat("lauz" + PlayerPrefs.GetInt("attempt").ToString(), transform.position.z);
         PlayerPrefs.SetFloat("angle" + PlayerPrefs.GetInt("attempt").ToString(), transform.rotation.eulerAngles.z);
+        Debug.Log(PlayerPrefs.GetFloat("lauy" + PlayerPrefs.GetInt("attempt").ToString()));
+        Debug.Log(PlayerPrefs.GetFloat("lauz" + PlayerPrefs.GetInt("attempt").ToString()));
         Debug.Log(PlayerPrefs.GetFloat("angle" + PlayerPrefs.GetInt("attempt").ToString()));
         rocketRb.velocity = storedVelocity;
         ruler0.SetActive(true);

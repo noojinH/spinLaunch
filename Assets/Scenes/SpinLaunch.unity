@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3683ce5e0ab331c45a3478953a6a924b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.01069
+      value: 51.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3683ce5e0ab331c45a3478953a6a924b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1434,7 +1434,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604359280}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1.15
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 8, z: 0}
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1623902453}
-  delay: 3
+  delay: 6
   launch: 0
   camera0: {fileID: 1531614374}
   ruler0: {fileID: 568011904}
@@ -1516,7 +1516,7 @@ MonoBehaviour:
     PathsEnabled:
     - Attacher/delay
     - Rigidbody/mass
-    ModificationVersion: 4
+    ModificationVersion: 86
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -1541,7 +1541,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 10
+      m_version: 256
     HashSetObjectsEnabled:
       m_buckets: 000000000200000000000000
       m_slots:
@@ -1557,7 +1557,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 10
+      m_version: 256
     HashSetComponentsEnabled:
       m_buckets: 000000000200000000000000
       m_slots:
@@ -1573,7 +1573,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 10
+      m_version: 256
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -2069,10 +2069,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b4f5664d4d8114dac4b09c0701d91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linearVelocity: 1
+  linearVelocity: 0.25
   radius: 0.05
-  maxRPM: 30
-  maxRPMTime: 6
+  maxRPM: 600
+  maxRPMTime: 7.5
 --- !u!54 &2129164915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2156,7 +2156,7 @@ MonoBehaviour:
     PathsEnabled:
     - DrillSimulation/maxRPM
     - DrillSimulation/maxRPMTime
-    ModificationVersion: 2
+    ModificationVersion: 50
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -2181,7 +2181,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 4
+      m_version: 148
     HashSetObjectsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -2197,7 +2197,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 3
+      m_version: 99
     HashSetComponentsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -2213,7 +2213,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 3
+      m_version: 99
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0

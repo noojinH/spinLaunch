@@ -17,6 +17,8 @@ public class loadM : MonoBehaviour
     }
 
     IEnumerator loadM_Coroutine(){
+        
+        yield return new WaitForEndOfFrame();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
         while(!asyncLoad.isDone){
             float progress = asyncLoad.progress;

@@ -33,19 +33,19 @@ public class Randomizer : MonoBehaviour
                     PlayerPrefs.SetInt("attempt", 1);
                     }
                 Debug.Log("attempt: " + PlayerPrefs.GetInt("attempt").ToString());
-                targetScript0.maxRPM = Random.Range(300f, 3000f);
+                targetScript0.maxRPM = Random.Range(400f, 600f);
                 tmp0.text =  targetScript0.maxRPM.ToString() + "RPM";
                 PlayerPrefs.SetFloat("maxRPMvar" + PlayerPrefs.GetInt("attempt").ToString(), targetScript0.maxRPM);
 
-                targetScript0.maxRPMTime = Random.Range(3f, 6f);
+                targetScript0.maxRPMTime = Random.Range(3f, 9f);
                 tmp0.text +=  " in " + targetScript0.maxRPMTime.ToString() +"s";
                 PlayerPrefs.SetFloat("maxTimevar" + PlayerPrefs.GetInt("attempt").ToString(), targetScript0.maxRPMTime);
 
-                rocket0.GetComponent<Rigidbody>().mass = Random.Range(0.5f, 1.5f);
+                rocket0.GetComponent<Rigidbody>().mass = Random.Range(0.3f, 1.15f);
                 tmp0.text += "\n" + rocket0.GetComponent<Rigidbody>().mass.ToString() + "kg";
                 PlayerPrefs.SetFloat("massVar" + PlayerPrefs.GetInt("attempt").ToString(), rocket0.GetComponent<Rigidbody>().mass);
 
-                rocket0.GetComponent<Attacher>().delay = Random.Range(1f, 7f);
+                rocket0.GetComponent<Attacher>().delay = Random.Range(6f, 9f);
                 tmp0.text += " \nlaunch: " + rocket0.GetComponent<Attacher>().delay.ToString()+"seconds";
                 PlayerPrefs.SetFloat("delayVar" + PlayerPrefs.GetInt("attempt").ToString(), rocket0.GetComponent<Attacher>().delay);
                 Debug.Log("Saved all variables.");
