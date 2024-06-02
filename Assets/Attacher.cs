@@ -77,8 +77,8 @@ public class Attacher : MonoBehaviour
         if (collision.gameObject.CompareTag("Respawn") && !isOnGround)
         {
             isOnGround = true;
-            PlayerPrefs.SetFloat("record" + PlayerPrefs.GetInt("attempt").ToString(), 0.1f * temp0);
-            Debug.Log("record: " + PlayerPrefs.GetFloat("record" + PlayerPrefs.GetInt("attempt"))+ "m");
+            PlayerPrefs.SetFloat("record" + PlayerPrefs.GetInt("rep").ToString(), 0.1f * temp0);
+            Debug.Log("record: " + PlayerPrefs.GetFloat("record" + PlayerPrefs.GetInt("rep"))+ "m");
             StartCoroutine(SwitchSceneAfterDelay(5f));
         }
     }
@@ -92,12 +92,12 @@ public class Attacher : MonoBehaviour
     public void DetachFromParent()
     {
         target = null;
-        PlayerPrefs.SetFloat("lauy" + PlayerPrefs.GetInt("attempt").ToString(), transform.position.y);
-        PlayerPrefs.SetFloat("lauz" + PlayerPrefs.GetInt("attempt").ToString(), transform.position.z);
-        PlayerPrefs.SetFloat("angle" + PlayerPrefs.GetInt("attempt").ToString(), transform.rotation.eulerAngles.z);
-        Debug.Log(PlayerPrefs.GetFloat("lauy" + PlayerPrefs.GetInt("attempt").ToString()));
-        Debug.Log(PlayerPrefs.GetFloat("lauz" + PlayerPrefs.GetInt("attempt").ToString()));
-        Debug.Log(PlayerPrefs.GetFloat("angle" + PlayerPrefs.GetInt("attempt").ToString()));
+        PlayerPrefs.SetFloat("lauy" + PlayerPrefs.GetInt("rep").ToString(), transform.position.y);
+        PlayerPrefs.SetFloat("lauz" + PlayerPrefs.GetInt("rep").ToString(), transform.position.z);
+        PlayerPrefs.SetFloat("angle" + PlayerPrefs.GetInt("rep").ToString(), transform.rotation.eulerAngles.z);
+        /*Debug.Log(PlayerPrefs.GetFloat("lauy" + PlayerPrefs.GetInt("rep").ToString()));
+        Debug.Log(PlayerPrefs.GetFloat("lauz" + PlayerPrefs.GetInt("rep").ToString()));
+        Debug.Log(PlayerPrefs.GetFloat("angle" + PlayerPrefs.GetInt("rep").ToString()));*/
         rocketRb.velocity = storedVelocity;
         ruler0.SetActive(true);
     }
