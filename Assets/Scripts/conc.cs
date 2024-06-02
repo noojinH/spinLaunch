@@ -9,14 +9,14 @@ public class conc : MonoBehaviour
     private GameObject loader0;
     private List<TableC> rnv1;
 
-    void Start()
+    public void convert()
     {
         rnv1 = loader0.GetComponent<loadM>().rnv0;
         StartCoroutine(ter());
     }
 
     IEnumerator ter(){
-    string filePath = Application.persistentDataPath + "/Assets/Exported.csv";
+    string filePath = Application.persistentDataPath + "/Omni1.csv";
 
         using(StreamWriter writer = new StreamWriter(filePath)){
             writer.WriteLine("Attempt,MaxRPM,MaxTaken,LaunchTimer, mass, record, initX, initY, angle");
