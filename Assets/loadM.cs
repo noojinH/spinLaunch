@@ -18,6 +18,7 @@ public class loadM : MonoBehaviour
     }
 
     IEnumerator loadM_Coroutine(){
+        yield return null;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(0);
         asyncLoad.allowSceneActivation = false;
 
@@ -27,7 +28,6 @@ public class loadM : MonoBehaviour
             progressPercentage = Mathf.RoundToInt(progress * 100f);
             if(time > 0.5f){
                 asyncLoad.allowSceneActivation = true;
-                yield return null;
             }
         }
     }

@@ -14,7 +14,7 @@ public class Randomizer : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI tmp0;
 
-    void Start(){
+    void Awake(){
         if(tmp0 == null){
             Debug.Log("Untargeted tmp0.");
         }

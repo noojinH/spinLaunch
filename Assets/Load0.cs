@@ -77,6 +77,7 @@ public class Load0 : MonoBehaviour
         }
         
         Debug.Log("Data exported to " + filePath);
+        floadM.SetActive(true);
         yield return null;
     }
 
