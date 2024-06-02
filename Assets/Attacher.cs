@@ -2,10 +2,39 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using System.IO;
 using TMPro;
+
+[System.Serializable]
+public class TableC0
+{
+    public float euler;
+    public float xRPM;
+    public float xTime;
+    public float aTime;
+    public float mass;
+    public float height;
+    public float inY;
+    public float inZ;
+    public int att;
+
+    public TableC0(int meta, float a, float b, float c, float d, float e, float f, float g, float h)
+    {
+        this.att = meta;
+        this.xRPM = a;
+        this.xTime = b;
+        this.aTime = c;
+        this.mass = d;
+        this.height = e;
+        this.inY = f;
+        this.inZ = g;
+        this.euler = h;
+    }
+}
 
 public class Attacher : MonoBehaviour
 {
+    List<TableC0> rnv0 = new List<TableC0>();
     [SerializeField] private Transform target;
     [SerializeField] public float delay = 3.0f;
     [SerializeField] public int launch = 0;
@@ -114,7 +143,8 @@ public class Attacher : MonoBehaviour
     IEnumerator SwitchSceneAfterDelay(float fi1)
     {
         yield return new WaitForSeconds(fi1);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 
     void fp0()
