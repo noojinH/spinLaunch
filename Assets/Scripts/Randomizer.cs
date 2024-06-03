@@ -37,7 +37,7 @@ public class Randomizer : MonoBehaviour
                 tmp0.text =  targetScript0.maxRPM.ToString() + "RPM";
                 PlayerPrefs.SetFloat("maxRPMvar" + PlayerPrefs.GetInt("rep").ToString(), targetScript0.maxRPM);
 
-                targetScript0.maxRPMTime = Random.Range(5f, 9f);
+                targetScript0.maxRPMTime = Random.Range(4f, 9f);
                 tmp0.text +=  " in " + targetScript0.maxRPMTime.ToString() +"s";
                 PlayerPrefs.SetFloat("maxTimevar" + PlayerPrefs.GetInt("rep").ToString(), targetScript0.maxRPMTime);
 
@@ -45,7 +45,7 @@ public class Randomizer : MonoBehaviour
                 tmp0.text += "\n" + rocket0.GetComponent<Rigidbody>().mass.ToString() + "kg";
                 PlayerPrefs.SetFloat("massVar" + PlayerPrefs.GetInt("rep").ToString(), rocket0.GetComponent<Rigidbody>().mass);
 
-                rocket0.GetComponent<Attacher>().delay = Random.Range(4f, 9f);
+                rocket0.GetComponent<Attacher>().delay = Random.Range(5f, 9f);
                 tmp0.text += " \nlaunch: " + rocket0.GetComponent<Attacher>().delay.ToString()+"seconds";
                 PlayerPrefs.SetFloat("delayVar" + PlayerPrefs.GetInt("rep").ToString(), rocket0.GetComponent<Attacher>().delay);
             }

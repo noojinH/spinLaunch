@@ -59,7 +59,7 @@ public class Attacher : MonoBehaviour
         if (launch == 1){
             if(transform.position.y - initY > temp0)
             temp0 = (transform.position.y - initY);
-            indicator.text = (0.1f * temp0).ToString() + "m";
+            indicator.text = (10f * temp0).ToString() + "cm";
             prev0 = temp0;
         }
 
@@ -77,8 +77,8 @@ public class Attacher : MonoBehaviour
         if (collision.gameObject.CompareTag("Respawn") && !isOnGround)
         {
             isOnGround = true;
-            PlayerPrefs.SetFloat("record" + PlayerPrefs.GetInt("rep").ToString(), 0.1f * temp0);
-            Debug.Log("record: " + PlayerPrefs.GetFloat("record" + PlayerPrefs.GetInt("rep"))+ "m");
+            PlayerPrefs.SetFloat("record" + PlayerPrefs.GetInt("rep").ToString(), 10f * temp0);
+            Debug.Log("record: " + PlayerPrefs.GetFloat("record" + PlayerPrefs.GetInt("rep"))+ "cm");
             StartCoroutine(SwitchSceneAfterDelay(5f));
         }
     }

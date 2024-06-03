@@ -16,7 +16,7 @@ public class conc : MonoBehaviour
     }
 
     IEnumerator ter(){
-    string filePath = Application.persistentDataPath + "/Omni1.csv";
+    string filePath = Application.persistentDataPath + "/Omni2.csv";
 
         using(StreamWriter writer = new StreamWriter(filePath)){
             writer.WriteLine("Attempt,MaxRPM,MaxTaken,LaunchTimer, mass, record, initX, initY, angle");

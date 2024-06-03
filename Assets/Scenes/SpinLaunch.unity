@@ -1589,7 +1589,7 @@ MonoBehaviour:
     PathsEnabled:
     - Attacher/delay
     - Rigidbody/mass
-    ModificationVersion: 159
+    ModificationVersion: 161
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -1614,7 +1614,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 475
+      m_version: 481
     HashSetObjectsEnabled:
       m_buckets: 000000000200000000000000
       m_slots:
@@ -1630,7 +1630,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 475
+      m_version: 481
     HashSetComponentsEnabled:
       m_buckets: 000000000200000000000000
       m_slots:
@@ -1646,7 +1646,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 475
+      m_version: 481
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -1734,7 +1734,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.6300004, y: -0.10999957, z: 0.51629996}
+  m_ConnectedAnchor: {x: 2.6299987, y: -0.11000048, z: 0.5163001}
   serializedVersion: 2
   m_UseSpring: 0
   m_Spring:
@@ -2243,7 +2243,7 @@ MonoBehaviour:
   linearVelocity: 0.25
   radius: 0.05
   maxRPM: 400
-  maxRPMTime: 7
+  maxRPMTime: 9
 --- !u!54 &2129164915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2327,7 +2327,7 @@ MonoBehaviour:
     PathsEnabled:
     - DrillSimulation/maxRPM
     - DrillSimulation/maxRPMTime
-    ModificationVersion: 71
+    ModificationVersion: 78
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -2352,7 +2352,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 211
+      m_version: 232
     HashSetObjectsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -2368,7 +2368,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 141
+      m_version: 155
     HashSetComponentsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -2384,7 +2384,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 141
+      m_version: 155
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
