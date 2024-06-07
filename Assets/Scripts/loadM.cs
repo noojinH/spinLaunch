@@ -66,7 +66,7 @@ public class loadM : MonoBehaviour
             TableC table = new TableC(att, xRPM, xTime, aTime, mass, height, inY, inZ, euler);
             rnv0.Add(table);
         }
-        yield return new WaitForSeconds(999);
+        //yield return new WaitForSeconds(999);
         yield return null;
         StartCoroutine(loadM_Coroutine());
     }

@@ -19,6 +19,7 @@ public class Randomizer : MonoBehaviour
             Debug.Log("Untargeted tmp0.");
         }
 
+        if(PlayerPrefs.GetInt("rand") != 1){
         if (cylinder0 != null && rocket0 != null)
         {
             // targetObject에서 TargetScript를 가져옵니다.
@@ -57,6 +58,7 @@ public class Randomizer : MonoBehaviour
         else
         {
            Debug.Log("TargetObject is not assigned.");
+        }
         }
     }
 }
